@@ -20,11 +20,29 @@ namespace Lab11_First_MVC_App.Models
 
         public static List<Person> GetPersons(int yearOne, int yearTwo)
         {
-            string path = "../personOfTheYear.csv";
-            string[] parsedResults = File.ReadAllLines(path);
-
+            string path = "~/personOfTheYear.csv";
+            string parsedResults = File.ReadAllText(path);
+            var newObject = parsedResults;
+            
             List<Person> parsedData = new List<Person>();
-
+            foreach (string item in parsedResults.Split('\n'))
+            {
+                if (!string.IsNullOrEmpty(item))
+                {
+                    parsedData.Add(new Person
+                    {
+                        Year = Convert.ToInt32(item.Split(',')[0]),
+                        Honor = item.Split(',')[1],
+                        Name = item.Split(',')[2],
+                        Country = item.Split(',')[3],
+                        BirthYear = Convert.ToInt32(item.Split(',')[4]),
+                        DeathYear = Convert.ToInt32(item.Split(',')[5]),
+                        Title = item.Split(',')[6],
+                        Category = item.Split(',')[7],
+                        Context = item.Split(',')[8],
+                    });
+                }
+            }
             /// read in file
             /// file.read all lines
             /// iterate through that array and set values appropriately to a new Person object
