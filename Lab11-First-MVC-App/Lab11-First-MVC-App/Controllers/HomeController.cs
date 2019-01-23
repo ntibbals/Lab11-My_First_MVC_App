@@ -18,7 +18,7 @@ namespace Lab11_First_MVC_App.Controllers
         [HttpPost]
         public IActionResult Index(int yearOne, int yearTwo)
         {
-            return RedirectToAction("Result", new { yearOne, yearTwo });
+            return RedirectToAction("Results", new { yearOne, yearTwo });
         }
 
         public IActionResult Result(int yearOne, int yearTwo)
