@@ -26,22 +26,22 @@ namespace Lab11_First_MVC_App.Models
             var newObject = parsedResults;
             
             List<Person> parsedData = new List<Person>();
-            foreach (string item in parsedResults.Skip(0))
+            foreach (string item in parsedResults.Skip(1))
             {
                 if (!string.IsNullOrEmpty(item))
                 {
                     string[] column = item.Split(",");
                     parsedData.Add(new Person
                     {
-                        Year = Convert.ToInt32(column[0]),
+                        Year =(column[0] == "") ? 0: Convert.ToInt32(column[0]),
                         Honor = column[1],
                         Name = column[2],
                         Country = column[3],
-                        BirthYear = Convert.ToInt32(column[4]),
-                        DeathYear = Convert.ToInt32(column[5]),
-                        Title = column[6],
-                        Category = column[7],
-                        Context = column[8],
+                        BirthYear = (column[4] == "") ? 0 : Convert.ToInt32(column[4]),
+                        DeathYear = (column[5] == "") ? 0 : Convert.ToInt32(column[5]),
+                        Title = item.Split(',')[6],
+                        Category = item.Split(',')[7],
+                        Context = item.Split(',')[8],
                     });
                 }
             }
