@@ -20,18 +20,20 @@ namespace Lab11_First_MVC_App.Models
 
         public static List<Person> GetPersons(int yearOne, int yearTwo)
         {
-            string path = "~/personOfTheYear.csv";
-            string parsedResults = File.ReadAllText(path);
+            string path = "../../../wwwroot/personOfTheYear.csv";
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
+            string[] parsedResults = File.ReadAllLines(fullPath);
             var newObject = parsedResults;
             
             List<Person> parsedData = new List<Person>();
-            foreach (string item in parsedResults.Split('\n'))
+            foreach (string item in parsedResults.Skip(0))
             {
                 if (!string.IsNullOrEmpty(item))
                 {
+                    string[] column = parsedResults.Split(",");
                     parsedData.Add(new Person
                     {
-                        Year = Convert.ToInt32(item.Split(',')[0]),
+                        Year = Convert.ToInt32(item.[0]),
                         Honor = item.Split(',')[1],
                         Name = item.Split(',')[2],
                         Country = item.Split(',')[3],
@@ -43,6 +45,7 @@ namespace Lab11_First_MVC_App.Models
                     });
                 }
             }
+            var personOfYear = parsedData.Where(p => (p.Year >= yearOne) && (p.Year <= yearTwo)).ToList();
             /// read in file
             /// file.read all lines
             /// iterate through that array and set values appropriately to a new Person object
@@ -50,8 +53,8 @@ namespace Lab11_First_MVC_App.Models
             /// cerate a full list of peopels from the csv file
             /// then do the linq query(with Lambe
             /// people.Where(p => (p.Year >= begYear) && (p.Year <= endYear)).ToList();
-            ///people.Where(yearTwo > begyear & parsedData.All Year less than end year.ToList();)
-            return parsedData;
+            /// people.Where(yearTwo > begyear & parsedData.All Year less than end year.ToList();)
+            return personOfYear;
         }
     }
 }

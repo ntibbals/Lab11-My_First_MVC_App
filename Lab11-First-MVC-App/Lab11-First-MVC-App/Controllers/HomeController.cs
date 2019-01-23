@@ -45,7 +45,7 @@ namespace Lab11_First_MVC_App.Controllers
             return RedirectToAction("Results", new { yearOne, yearTwo });
         }
 
-        public IActionResult Result(int yearOne, int yearTwo)
+        public IActionResult Results(int yearOne, int yearTwo)
         {
             Person person = new Person();
             return View(Person.GetPersons(yearOne, yearTwo));
