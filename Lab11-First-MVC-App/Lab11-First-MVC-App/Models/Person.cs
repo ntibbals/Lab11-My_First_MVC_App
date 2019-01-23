@@ -30,18 +30,18 @@ namespace Lab11_First_MVC_App.Models
             {
                 if (!string.IsNullOrEmpty(item))
                 {
-                    string[] column = parsedResults.Split(",");
+                    string[] column = item.Split(",");
                     parsedData.Add(new Person
                     {
-                        Year = Convert.ToInt32(item.[0]),
-                        Honor = item.Split(',')[1],
-                        Name = item.Split(',')[2],
-                        Country = item.Split(',')[3],
-                        BirthYear = Convert.ToInt32(item.Split(',')[4]),
-                        DeathYear = Convert.ToInt32(item.Split(',')[5]),
-                        Title = item.Split(',')[6],
-                        Category = item.Split(',')[7],
-                        Context = item.Split(',')[8],
+                        Year = Convert.ToInt32(column[0]),
+                        Honor = column[1],
+                        Name = column[2],
+                        Country = column[3],
+                        BirthYear = Convert.ToInt32(column[4]),
+                        DeathYear = Convert.ToInt32(column[5]),
+                        Title = column[6],
+                        Category = column[7],
+                        Context = column[8],
                     });
                 }
             }
