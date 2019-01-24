@@ -8,18 +8,35 @@
 </head>
 <body>
     <h1>Hear are the Persons of Your Persons of the Year:</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Honor</th>
+            <th>Country</th>
+            <th>Category</th>
+            <th>Birth Year</th>
+            <th>Death Year</th>
+            <th>Context</th>
+        </tr>
+  
+    
     @foreach (var item in Model)
-    {
-        <h3>@item.Name</h3>
-        <h3>@item.Year</h3>
-        <h3>@item.Title</h3>
-        <h3>@item.Honor</h3>
-        <h3>@item.Country</h3>
-        <h3>@item.Category</h3>
-        <h3>@item.BirthYear</h3>
-        <h3>@item.DeathYear</h3>
-        <h3>@item.Context</h3>
-    }
-
+     {
+        <tr>
+            <th>@item.Name</th>
+            <th>@item.Year</th>
+            <th>@item.Title</th>
+            <th>@item.Honor</th>
+            <th>@item.Country</th>
+            <th>@item.Category</th>
+            <th>@item.BirthYear</th>
+            <th>@item.DeathYear</th>
+            <th>@item.Context</th>
+        </tr>
+     }
+     </table>
+    
 </body>
 </html>
