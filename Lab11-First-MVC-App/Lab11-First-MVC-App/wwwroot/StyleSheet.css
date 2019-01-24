@@ -64,21 +64,22 @@
 }
 
 th {
-    border: solid 2px black;
     padding-top: 1vw;
     width: auto;
-}       
+    border: solid 2px red;
+}  
+
 tr {
     padding: 2vw;
     width: auto;
 }
-tr:nth-child(even){
-    background-color: #fff;
-}
-tr:nth-child(odd) {
-    background-color: #000;
-    color: #fff;
-}
+    tr:nth-child(even) {
+        background-color: #fff;
+    }
+    tr:nth-child(odd) {
+        background-color: #000;
+        color: #fff;
+    }
 #mini-Time {
     font-family: 'Times New Roman', Times, serif, serif;
     color: red;
