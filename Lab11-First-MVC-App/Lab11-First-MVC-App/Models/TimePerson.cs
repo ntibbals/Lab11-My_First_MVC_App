@@ -18,43 +18,40 @@ namespace Lab11_First_MVC_App.Models
         public string Category { get; set; }
         public string Context { get; set; }
 
+        /// <summary>
+        /// Method reads in CSV file and pushes into new instantiated list that contians Time Person objects
+        /// </summary>
+        /// <param name="yearOne">starting year input</param>
+        /// <param name="yearTwo">ending year input</param>
+        /// <returns></returns>
         public static List<TimePerson> GetPersons(int yearOne, int yearTwo)
         {
-            string path = "../../../wwwroot/personOfTheYear.csv";
-            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
-            string[] parsedResults = File.ReadAllLines(fullPath);
-            var newObject = parsedResults;
+            string path = "../../../wwwroot/personOfTheYear.csv"; /// initial root path
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path); /// combines root paths to read file in
+            string[] parsedResults = File.ReadAllLines(fullPath); /// reads file into an array
             
-            List<TimePerson> parsedData = new List<TimePerson>();
-            foreach (string item in parsedResults.Skip(1))
+            List<TimePerson> parsedData = new List<TimePerson>(); ///newly instantiatd list to hold parsed csv data
+            foreach (string item in parsedResults.Skip(1)) /// runs through for each, skipping initial title line in document
             {
                 if (!string.IsNullOrEmpty(item))
                 {
-                    string[] column = item.Split(",");
+                    string[] column = item.Split(","); ///splits array into comma delimited array
                     parsedData.Add(new TimePerson
                     {
-                        Year =(column[0] == "") ? 0: Convert.ToInt32(column[0]),
+                        Year =(column[0] == "") ? 0: Convert.ToInt32(column[0]), /// ternary operated to check if empty
                         Honor = column[1],
                         Name = column[2],
                         Country = column[3],
-                        BirthYear = (column[4] == "") ? 0 : Convert.ToInt32(column[4]),
-                        DeathYear = (column[5] == "") ? 0 : Convert.ToInt32(column[5]),
-                        Title = item.Split(',')[6],
-                        Category = item.Split(',')[7],
-                        Context = item.Split(',')[8],
+                        BirthYear = (column[4] == "") ? 0 : Convert.ToInt32(column[4]), /// ternary operated to check if empty
+                        DeathYear = (column[5] == "") ? 0 : Convert.ToInt32(column[5]), /// ternary operated to check if empty
+                        Title = column[6],
+                        Category = column[7],
+                        Context = column[8],
                     });
                 }
             }
-            var personOfYear = parsedData.Where(p => (p.Year >= yearOne) && (p.Year <= yearTwo)).ToList();
-            /// read in file
-            /// file.read all lines
-            /// iterate through that array and set values appropriately to a new Person object
-            /// CSV is comma delimated
-            /// cerate a full list of peopels from the csv file
-            /// then do the linq query(with Lambe
-            /// people.Where(p => (p.Year >= begYear) && (p.Year <= endYear)).ToList();
-            /// people.Where(yearTwo > begyear & parsedData.All Year less than end year.ToList();)
-            return personOfYear;
+            var personOfYear = parsedData.Where(p => (p.Year >= yearOne) && (p.Year <= yearTwo)).ToList(); /// lambda expression to pull query based on user input for starting and ending year
+            return personOfYear; /// return query
         }
     }
 }

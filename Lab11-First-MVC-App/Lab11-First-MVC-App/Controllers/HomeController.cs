@@ -36,10 +36,10 @@ namespace Lab11_First_MVC_App.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Calls method into results page view
         /// </summary>
-        /// <param name="yearOne"></param>
-        /// <param name="yearTwo"></param>
+        /// <param name="yearOne">starting year input</param>
+        /// <param name="yearTwo">ending year input</param>
         /// <returns></returns>
         [HttpGet]
         public IActionResult Results(int yearOne, int yearTwo)
