@@ -5,36 +5,58 @@
 <head>
     <title>Results Page</title>
     <link href="~/StyleSheet.css" rel="stylesheet" />
+    <link href="~/reset.css" rel="stylesheet" />
 </head>
-<body>
-    <h1>Hear are the Persons of Your Persons of the Year:</h1>
-    <table>
-        <tr>
+<body id="results-body">
+    <h1 id="results-title"><strong id="mini-Time">Time </strong>Persons of the Year</h1>
+    <table id="table">
+        <tr id="table-head">
             <th>Name</th>
             <th>Year</th>
             <th>Title</th>
-            <th>Honor</th>
             <th>Country</th>
             <th>Category</th>
             <th>Birth Year</th>
             <th>Death Year</th>
             <th>Context</th>
         </tr>
-  
-    
     @foreach (var item in Model)
      {
         <tr>
-            <th>@item.Name</th>
+            @if (item.Name == "")
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.Name</th>}
             <th>@item.Year</th>
-            <th>@item.Title</th>
-            <th>@item.Honor</th>
+            @if (item.Title == "")
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.Title</th>}
             <th>@item.Country</th>
             <th>@item.Category</th>
-            <th>@item.BirthYear</th>
-            <th>@item.DeathYear</th>
-            <th>@item.Context</th>
-        </tr>
+            @if (item.BirthYear == 0)
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.BirthYear</th>}
+            @if (item.DeathYear == 0)
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.DeathYear</th>}
+            @if (item.Context == "")
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.Context</th>}
+            </tr>
      }
      </table>
     

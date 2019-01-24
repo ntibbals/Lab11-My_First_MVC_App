@@ -1,8 +1,12 @@
 ﻿body {
     background-color: whitesmoke;
+    background: url("influence.png");
     text-align: center;
 }
 
+#results-body {
+    background-color: #ddd;
+}
 div {
     background: url("einst.jpg") no-repeat center center fixed;
     width: 25vw;
@@ -12,11 +16,22 @@ div {
 }
 #form-contain {
     /*border: solid 2px black;*/
+    padding-top: 2vw;
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 100vw;
+    height: 100vw;
 }
+#index-person {
+    font-size: 3vw;
+    margin-bottom: 1vw;
 
+}
+#table-head {
+    font-family: 'Times New Roman', Times, serif, serif;
+    color: red;
+
+}
 #time {
     font-family: 'Times New Roman', Times, serif, serif;
     color: red;
@@ -24,14 +39,47 @@ div {
 }
 .search-label{
     width: 50%;
+    font-size: 1.5vw;
+    color: red;
+    font-weight: bold;
 }
-
+#results-title{
+    font-size: 3vw;
+    color: #fff;
+}
 .search-input {
     width: 10vw;
     border-radius: .5em;
 
 }
+#table {
+    border: solid 2px black;
+    height: 40vw;
+    margin-left: 10vw;
+    margin-bottom: 3vw;
+}
 
+th {
+    border: solid 2px black;
+    padding-top: 1vw;
+    width: auto;
+}       
+tr {
+    padding: 2vw;
+    width: auto;
+}
+tr:nth-child(even){
+    background-color: #fff;
+}
+tr:nth-child(odd) {
+    background-color: #000;
+    color: #fff;
+}
 #button {
 
+}
+#mini-Time {
+    font-family: 'Times New Roman', Times, serif, serif;
+    color: red;
+    font-size: 8vw;
 }
