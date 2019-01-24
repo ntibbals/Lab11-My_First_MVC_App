@@ -47,8 +47,8 @@ namespace Lab11_First_MVC_App.Controllers
 
         public IActionResult Results(int yearOne, int yearTwo)
         {
-            Person person = new Person();
-            return View(Person.GetPersons(yearOne, yearTwo));
+            TimePerson person = new TimePerson();
+            return View(TimePerson.GetPersons(yearOne, yearTwo));
         }
     }
 }

@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Lab11_First_MVC_App.Models
 {
-    public class Person
+    public class TimePerson
     {
         public int Year { get; set; }
         public string Honor { get; set; }
@@ -18,20 +18,20 @@ namespace Lab11_First_MVC_App.Models
         public string Category { get; set; }
         public string Context { get; set; }
 
-        public static List<Person> GetPersons(int yearOne, int yearTwo)
+        public static List<TimePerson> GetPersons(int yearOne, int yearTwo)
         {
             string path = "../../../wwwroot/personOfTheYear.csv";
             string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
             string[] parsedResults = File.ReadAllLines(fullPath);
             var newObject = parsedResults;
             
-            List<Person> parsedData = new List<Person>();
+            List<TimePerson> parsedData = new List<TimePerson>();
             foreach (string item in parsedResults.Skip(1))
             {
                 if (!string.IsNullOrEmpty(item))
                 {
                     string[] column = item.Split(",");
-                    parsedData.Add(new Person
+                    parsedData.Add(new TimePerson
                     {
                         Year =(column[0] == "") ? 0: Convert.ToInt32(column[0]),
                         Honor = column[1],

@@ -1,3 +1,37 @@
 ﻿body {
-    background-color: aqua;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+div {
+    background: url("einst.jpg") no-repeat center center fixed;
+    width: 25vw;
+    height: 45vw;
+    margin-left: 25vw;
+    border: solid 6px red;
+}
+#form-contain {
+    /*border: solid 2px black;*/
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+#time {
+    font-family: 'Times New Roman', Times, serif, serif;
+    color: red;
+    font-size: 10vw;
+}
+.search-label{
+    width: 50%;
+}
+
+.search-input {
+    width: 10vw;
+    border-radius: .5em;
+
+}
+
+#button {
+
 }

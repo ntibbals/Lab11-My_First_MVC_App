@@ -4,15 +4,24 @@
     <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
-    <form method="post">
-        <label name="yearOne">Year One</label>
-        <input name="yearOne" />
+    <header></header>
+    <main>
+        
+        <div id="form-contain">
+            <h1 id="time"> TIME </h1>
+            <h2>Persons of the Year</h2>
+            <form method="post">
+                <label class="search-label" name="yearOne">Starting Year</label>
+                <input class="search-input" name="yearOne" />
 
-        <label name="yearTwo">Year Two</label>
-        <input name="yearTwo" />
+                <label class="search-label" name="yearTwo">Ending Year</label>
+                <input class="search-input" name="yearTwo" />
 
-        <button type="submit">SUBMIT</button>
+                <button id="button" type="submit">SUBMIT</button>
+            </form>
 
-    </form>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
