@@ -7,20 +7,15 @@
 #results-body {
     background-color: #ddd;
 }
-div {
-    background: url("einst.jpg") no-repeat center center fixed;
-    width: 25vw;
-    height: 45vw;
-    margin-left: 25vw;
-    border: solid 6px red;
-}
 #form-contain {
-    /*border: solid 2px black;*/
-    padding-top: 2vw;
+    background: url("einst.jpg") no-repeat center;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vw;
+    margin: 0 auto;
+    width: 45vw;
+    height: 50vw;
+    border: solid 10px red;
+    margin-top: 1vw;
 }
 #index-person {
     font-size: 3vw;
@@ -55,7 +50,7 @@ div {
 #table {
     border: solid 2px black;
     height: 40vw;
-    margin-left: 10vw;
+    margin: 0 auto;
     margin-bottom: 3vw;
 }
 
@@ -74,9 +69,6 @@ tr:nth-child(even){
 tr:nth-child(odd) {
     background-color: #000;
     color: #fff;
-}
-#button {
-
 }
 #mini-Time {
     font-family: 'Times New Roman', Times, serif, serif;

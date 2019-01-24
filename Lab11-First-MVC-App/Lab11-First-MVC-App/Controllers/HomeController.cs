@@ -13,38 +13,35 @@ namespace Lab11_First_MVC_App.Controllers
     {
         public static string Path = "../personOfTheYear.csv";
 
+        /// <summary>
+        /// Calls initial index view
+        /// </summary>
+        /// <returns>index view</returns>
         [HttpGet]
         public IActionResult Index()
         {
-            //List <Person> parsedData = new List<Person>();
-
-            //try
-            //{
-            //    using (StreamReader readFile = new StreamReader(Path))
-            //    {
-            //        string line;
-            //        string[] row;
-
-            //        while ((line = readFile.ReadLine()) != null)
-            //        {
-            //            row = line.Split(',');
-            //            parsedData.Add(row);
-            //        }
-            //    }
-            //}
-            //catch(Exception e)
-            //{ 
-            //    Console.Write(e.Message);
-            //}
                 return View();
         }
 
+        /// <summary>
+        /// Redirects Index view to Results view, passing in input arguments
+        /// </summary>
+        /// <param name="yearOne">starting year input</param>
+        /// <param name="yearTwo">ending year input</param>
+        /// <returns>results page with given inputs passed in</returns>
         [HttpPost]
         public IActionResult Index(int yearOne, int yearTwo)
         {
             return RedirectToAction("Results", new { yearOne, yearTwo });
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yearOne"></param>
+        /// <param name="yearTwo"></param>
+        /// <returns></returns>
+        [HttpGet]
         public IActionResult Results(int yearOne, int yearTwo)
         {
             TimePerson person = new TimePerson();
