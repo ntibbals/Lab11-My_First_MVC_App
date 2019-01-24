@@ -1,0 +1,64 @@
+﻿@model List<Lab11_First_MVC_App.Models.TimePerson>;
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Results Page</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <link href="~/reset.css" rel="stylesheet" />
+</head>
+<body id="results-body">
+    <h1 id="results-title"><strong id="mini-Time">Time </strong>Persons of the Year</h1>
+    <table id="table">
+        <tr id="table-head">
+            <th>Name</th>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Country</th>
+            <th>Category</th>
+            <th>Birth Year</th>
+            <th>Death Year</th>
+            <th>Context</th>
+        </tr>
+    @foreach (var item in Model)
+     {
+        <tr>
+            @if (item.Name == "")
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.Name</th>}
+            <th>@item.Year</th>
+            @if (item.Title == "")
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.Title</th>}
+            <th>@item.Country</th>
+            <th>@item.Category</th>
+            @if (item.BirthYear == 0)
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.BirthYear</th>}
+            @if (item.DeathYear == 0)
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.DeathYear</th>}
+            @if (item.Context == "")
+            {
+                <th>N/A</th>}
+            else
+            {
+                <th>@item.Context</th>}
+            </tr>
+     }
+     </table>
+    
+</body>
+</html>
