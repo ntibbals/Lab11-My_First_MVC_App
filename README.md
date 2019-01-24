@@ -22,8 +22,8 @@
 ## Visuals
 
 # Home Page load
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/Lab11-My_First_MVC_App/blob/master/index.PNG)
 
 # Filtered Query for all Persons of Year between 1987 and 1997
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/Lab11-My_First_MVC_App/blob/master/result.PNG)
 
